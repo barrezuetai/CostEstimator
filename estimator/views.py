@@ -1,3 +1,11 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def home(request):
+    return render(
+        request,
+        'estimator/base.html',
+        {
+            'title': 'Price Estimator',
+        }
+    )
