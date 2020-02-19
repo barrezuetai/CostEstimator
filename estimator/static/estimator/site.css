@@ -6,8 +6,10 @@ body {
 }
 
 nav {
+    display: flex;
     height: 60px;
     background-color: #364156;
+    align-items: center;
 }
 
 .nav2 {
@@ -28,4 +30,20 @@ main {
 .right {
     flex-grow: 1;
     background-color: rgb(241, 241, 241);
+}
+
+nav a {
+    color: antiquewhite;
+    text-decoration: none;
+    padding: 0 1rem;
+    vertical-align: middle;
+    margin: auto 0;
+}
+nav a:first-child {
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+nav a:visited {
+    color: #ffcb3d
 }
