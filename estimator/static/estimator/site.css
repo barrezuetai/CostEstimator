@@ -13,8 +13,11 @@ nav {
 }
 
 .nav2 {
+    display: flex;
     height: 50px;
     background-color: #DFF8EB;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 main {
@@ -46,4 +49,54 @@ nav a:first-child {
 
 nav a:visited {
     color: #ffcb3d
+}
+
+.nav2 form {
+    display: flex;
+    margin: 0;
+    align-items: center;
+}
+
+.nav2 input[type=text] {
+    padding: 6px;
+    font-size: 17px;
+    border: none;
+}
+  
+.nav2 form button {
+    float: right;
+    padding: 6px;
+    background: rgb(88, 145, 112);
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+
+.nav2 form button:hover {
+    background: rgba(33, 78, 52, 1);
+}
+
+.nav2 form label {
+    font-size: 1.75rem;
+    font-weight: 500;
+    font-style: oblique;
+    padding-right: 3rem;
+}
+
+.content {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content p {
+    line-height: 1.4rem;
+}
+
+footer {
+    margin-top: auto;
+    text-align: center;
+    padding: .42rem 0 .45rem 0;
+    background: #DFF8EB;
+    color: #364156;
 }
