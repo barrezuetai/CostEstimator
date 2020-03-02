@@ -22,7 +22,7 @@ nav {
 
 main {
     display: flex;
-    flex: 1;
+    min-height: 100vh;
     justify-content: space-evenly;
 }
 
