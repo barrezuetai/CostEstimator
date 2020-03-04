@@ -100,3 +100,18 @@ footer {
     background: #DFF8EB;
     color: #364156;
 }
+
+@media only screen and (max-width: 600px) {
+    body {
+        width: 100vw;
+    }
+    main {
+        flex-direction: column;
+    }
+
+    .content p {
+        line-height: normal;
+        overflow-wrap: break-word;
+    }
+    
+  }
