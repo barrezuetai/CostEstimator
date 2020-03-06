@@ -1,5 +1,6 @@
 from django.test import TestCase
 from .utils.pdfparse import normalize as norm
+from .utils.pdfparse import pdf_to_text as p2t
 
 
 class PDFScanTestCase(TestCase):
@@ -9,14 +10,13 @@ class PDFScanTestCase(TestCase):
         pass
 
     def test_pdf_scans(self):
-        self.assertEqual(1, 1)
+        converted_text = p2t()
+        self.assertTrue(len(converted_text) > 0)
 
     def test_normalize_makes_lowercase(self):
         test_data = ["This is Uppercase", "AAAAAA", "O!"]
         expected = ["this is uppercase", "aaaaaa", "o!"]
-
         normalized = norm(test_data)
-
         for i, n in enumerate(normalized):
             self.assertEqual(n, expected[i])
 
