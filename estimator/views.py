@@ -35,3 +35,11 @@ def create_hospital_page(request):
     )
 
 
+def get_all_hospitals(request):
+    all_hospitals = Hospital.objects.all()
+    print(all_hospitals)
+    return render(
+        request,
+        "estimator/all.html",
+        {"all_hospitals": all_hospitals}
+    )
