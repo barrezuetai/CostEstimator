@@ -27,7 +27,11 @@ main {
 }
 
 .left {
-    flex-grow: 2;
+    flex-grow: 3;
+}
+
+.left img {
+    width: 100%;
 }
 
 .right {
