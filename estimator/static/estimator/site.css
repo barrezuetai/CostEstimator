@@ -35,6 +35,45 @@ main {
     background-color: rgb(241, 241, 241);
 }
 
+.right form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px;
+    padding: 15px;
+    background-color: rgba(88, 145, 112, 0.253);
+    border-radius: 1rem;
+}
+
+.right form input[type=text] {
+    width: 100%;
+    padding: .5em 20px;
+    font-size: 1.1rem;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: white;
+  }
+.right p {
+    text-align: center;
+    color: rgba(88, 145, 112);
+    font-size: 1.4rem;
+}
+
+.right input::placeholder{
+    font-size: 1.1rem;
+    color: rgba(88, 145, 112, 0.356);
+}
+.right .button {
+    padding: 5px 20px;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    max-width: 200px;
+    background-color: #ffcb3d;
+
+}
+
 nav a {
     color: antiquewhite;
     text-decoration: none;

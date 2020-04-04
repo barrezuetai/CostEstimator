@@ -1,0 +1,10 @@
+{% extends 'estimator/base.html' %}
+
+{% block content %}
+<form method="post">
+    <p>Enter Your Hospital Information!</p>
+    {% csrf_token %}
+    {{ formset }}
+    <input class="button" type="submit" value="Submit">
+</form>
+{% endblock %}
