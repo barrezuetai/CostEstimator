@@ -1,4 +1,9 @@
-from django.shortcuts import render
+from django.views.generic import DetailView
+from estimator.models import Hospital
+
+
+class HospitalDetailView(DetailView):
+    model = Hospital
 
 
 def home(request):

@@ -1,0 +1,24 @@
+{% extends 'estimator/base.html' %}
+
+
+{% block content %}
+    <h1>{{ object.hospital_name }}</h1>
+
+    <p> <strong>Hospital Name:</strong>
+        {{ object.gross_revenue }}</p>
+
+    <p> <strong>Contractual Adjustments:</strong>
+        {{ object.contractual_adjustments }}</p>
+
+    <p> <strong>Other Deductions:</strong>
+        {{ object.other_deductions }}</p>
+
+    <p> <strong>Additions to revenue:</strong>
+        {{ object.additions_to_revenue }}</p>
+
+    <p> <strong>Deductions:</strong>
+        {{ object.deductions }}</p>
+
+    <p> <strong>Net Revenue:</strong>
+        {{ object.net_revenue }}</p>
+{% endblock %}
