@@ -8,9 +8,10 @@
     </head>
     <body>
         <nav>
-            <a href="">Pricestimator</a>
-            <a href="https://facebook.com">Mission</a>
-            <a href="https://facebook.com">Contact</a>
+            <a href="{% url 'home' %}">Pricestimator</a>
+            <a href="{% url 'home' %}">Mission</a>
+            <a href="{% url 'home' %}">Contact</a>
+            <a href="{% url 'create_hospital' %}">Add a Hospital</a>
         </nav>
         <div class="nav2">
             <form action="/action_page.php">
@@ -34,7 +35,10 @@
                     </p>
                 </div>
             </div>
-            <div class="right">asdf</div>
+            <div class="right">
+                {% block content %}
+                {% endblock %}
+            </div>
         </main>
         <footer>Property of Isaac Barrezueta ©</footer>
     </body>
