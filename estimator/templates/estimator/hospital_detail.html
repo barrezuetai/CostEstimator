@@ -5,7 +5,7 @@
 {% block content %}
     <h1>{{ object.hospital_name }}</h1>
 
-    <p> <strong>Hospital Name:</strong>
+    <p> <strong>Gross Revenue:</strong>
         {{ object.gross_revenue }}</p>
 
     <p> <strong>Contractual Adjustments:</strong>
@@ -22,4 +22,11 @@
 
     <p> <strong>Net Revenue:</strong>
         {{ object.net_revenue }}</p>
+
+    <p> <strong>PCR:</strong>
+        {{ object.price_cost_ratio|floatformat:-4}}</p>
+    {% for procedure, price in procedure_prices.items %}
+    <p> <strong>{{procedure}}:</strong>
+        ${{ price|floatformat:2|intcomma}}</p>
+    {% endfor %}
 {% endblock %}
