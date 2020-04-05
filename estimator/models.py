@@ -11,9 +11,9 @@ class Hospital(models.Model):
     hospital_name = models.CharField(max_length=30)
 
     gross_revenue = models.IntegerField()
-    contractual_adjustments = models.IntegerField()
-    other_deductions = models.IntegerField()
-    additions_to_revenue = models.IntegerField()
+    contractual_adjustments = models.IntegerField(blank=True, null=True)
+    other_deductions = models.IntegerField(blank=True, null=True)
+    additions_to_revenue = models.IntegerField(blank=True, null=True)
 
     deductions = models.IntegerField()
     net_revenue = models.IntegerField()
