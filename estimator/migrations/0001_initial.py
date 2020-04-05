@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Hospital',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),  # noqa: E501
                 ('hospital_name', models.CharField(max_length=30)),
                 ('gross_revenue', models.IntegerField()),
                 ('contractual_adjustments', models.IntegerField()),

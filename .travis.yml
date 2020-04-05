@@ -5,4 +5,4 @@ install:
   - pipenv install --dev
 script:
   - pipenv run flake8
-  - pipenv run python manage.py test
+  - pipenv run python manage.py test -v 2
