@@ -1,5 +1,5 @@
 from django.db import models
-from estimator.utils.estimate import pcr
+from estimator.utils.estimate import get_pcr as pcr
 
 
 class Hospital(models.Model):
@@ -17,7 +17,7 @@ class Hospital(models.Model):
 
     deductions = models.IntegerField()
     net_revenue = models.IntegerField()
-    price_cost_ratio = models.IntegerField()
+    price_cost_ratio = models.DecimalField(max_digits=10, decimal_places=9)
 
     def save(self, *args, **kwargs):
         """
@@ -30,5 +30,9 @@ class Hospital(models.Model):
         self.net_revenue = (self.gross_revenue
                             + self.additions_to_revenue
                             - self.deductions)
-        self.price_cost_ratio = pcr()
+        hospital_finances = {}
+        hospital_finances['net_revenue'] = self.net_revenue
+        hospital_finances['gross_revenue'] = self.gross_revenue
+        self.price_cost_ratio = pcr(hospital_finances)
+        print(self.price_cost_ratio)
         super(Hospital, self).save(*args, **kwargs)
