@@ -22,5 +22,8 @@
 
 <p> <strong>Net Revenue:</strong>
     {{ h.net_revenue }}</p>
+
+<p> <strong>PCR:</strong>
+    {{ h.price_cost_ratio|floatformat:4}}</p>
     {% endfor %}
 {% endblock %}
