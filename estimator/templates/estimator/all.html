@@ -2,28 +2,9 @@
 
 
 {% block content %}
-{% for h in all_hospitals%}
-<h1>{{ h.hospital_name }}</h1>
-
-<p> <strong>Hospital Name:</strong>
-    {{ h.gross_revenue }}</p>
-
-<p> <strong>Contractual Adjustments:</strong>
-    {{ h.contractual_adjustments }}</p>
-
-<p> <strong>Other Deductions:</strong>
-    {{ h.other_deductions }}</p>
-
-<p> <strong>Additions to revenue:</strong>
-    {{ h.additions_to_revenue }}</p>
-
-<p> <strong>Deductions:</strong>
-    {{ h.deductions }}</p>
-
-<p> <strong>Net Revenue:</strong>
-    {{ h.net_revenue }}</p>
-
-<p> <strong>PCR:</strong>
-    {{ h.price_cost_ratio|floatformat:4}}</p>
+<table>
+    {% for h in all_hospitals%}
+        <tr><td><a href="{% url 'hospital_detail' h.pk %}">{{h.hospital_name}}</td></a></tr>
     {% endfor %}
+</table>
 {% endblock %}

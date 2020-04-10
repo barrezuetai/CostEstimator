@@ -30,10 +30,45 @@ main {
     flex-grow: 3;
 }
 
-.left img {
+.content table {
     width: 100%;
 }
 
+.content table {
+    border-collapse: collapse;
+}
+
+.content table tr:nth-child(even){
+    background-color: #DFF8EB;
+}
+
+.content table th{
+    background-color: rgb(88, 145, 112);
+}
+
+.content td, .content th {
+    padding: 10px;
+    border: 1px solid #ffcb3d;
+    margin: 0px;
+}
+
+caption {
+    font-size: 2.15em;
+    color: #364156;
+
+}
+
+.right td, .right th {
+    padding: 10px;
+    border: 1px solid #364156;
+    margin: 0px;
+}
+.left img {
+    width: 100%;
+}
+.content h1 {
+    justify-content: center;
+}
 .right {
     flex-grow: 1;
     background-color: rgb(241, 241, 241);
@@ -47,6 +82,14 @@ main {
     padding: 15px;
     background-color: rgba(88, 145, 112, 0.253);
     border-radius: 1rem;
+}
+
+.right table {
+    border-collapse: collapse;
+    background: white;
+    margin-left: auto;
+    margin-right: auto;
+    empty-cells: hide;
 }
 
 .right form input[type=text] {
@@ -149,7 +192,7 @@ footer {
         width: 100vw;
     }
     main {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
 
     .content p {

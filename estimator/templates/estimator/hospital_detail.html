@@ -1,32 +1,76 @@
-{% extends 'estimator/base.html' %}
 {% load humanize %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'estimator/site.css' %}">
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>{% if title %} {{ title }} {% else %} Home {% endif %}</title>
+    </head>
+    <body>
+        <nav>
+            <a href="{% url 'home' %}">Pricestimator</a>
+            <a href="{% url 'home' %}">Mission</a>
+            <a href="{% url 'home' %}">Contact</a>
+            <a href="{% url 'create_hospital' %}">Add a Hospital</a>
+        </nav>
+        <div class="nav2">
+            <form action="/action_page.php">
+                <label for="search">Find a Hospital</label>
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit">Submit</button>
+              </form>
+        </div>
+        <main>
+            <div class="left">
+                <div class="content">
+                    <h1>{{ object.hospital_name }}</h1>
+                    <img src="{% static 'estimator/home-image.jpg' %}" alt="home-logo">
+                    <table>
+                        <tr>
+                            <th>Procdure Name</th>
+                            <th>Estimated Price</th>
+                        </tr>
+                        {% for procedure, price in procedure_prices.items %}
+                        <tr>
+                            <td>
+                                {{procedure}}:
+                            </td>
+                            <td>
+                                ${{ price|floatformat:2|intcomma}}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                        
+                </div>
+            </div>
+            <div class="right">
+                    <table>
+                        <caption>{{ object.hospital_name }}</caption>
+                        <tr><td>Gross Revenue:</td>
+                            <td>${{ object.gross_revenue|intcomma }}</td></tr>
 
+                        <tr> <td>Contractual Adjustments:</td>
+                            <td>${{ object.contractual_adjustments|intcomma}}</tr>
 
-{% block content %}
-    <h1>{{ object.hospital_name }}</h1>
+                        <tr> <td>Other Deductions:</td>
+                            <td>${{ object.other_deductions|intcomma }}</td></tr>
 
-    <p> <strong>Gross Revenue:</strong>
-        {{ object.gross_revenue }}</p>
+                        <tr> <td>Additions to revenue:</td>
+                            <td>${{ object.additions_to_revenue|intcomma }}</td></tr>
 
-    <p> <strong>Contractual Adjustments:</strong>
-        {{ object.contractual_adjustments }}</p>
+                        <tr> <td>Deductions:</td>
+                            <td>${{ object.deductions|intcomma }}</td></tr>
 
-    <p> <strong>Other Deductions:</strong>
-        {{ object.other_deductions }}</p>
+                        <tr> <td>Net Revenue:</td>
+                            <td>${{ object.net_revenue|intcomma }}</td></tr>
 
-    <p> <strong>Additions to revenue:</strong>
-        {{ object.additions_to_revenue }}</p>
-
-    <p> <strong>Deductions:</strong>
-        {{ object.deductions }}</p>
-
-    <p> <strong>Net Revenue:</strong>
-        {{ object.net_revenue }}</p>
-
-    <p> <strong>PCR:</strong>
-        {{ object.price_cost_ratio|floatformat:-4}}</p>
-    {% for procedure, price in procedure_prices.items %}
-    <p> <strong>{{procedure}}:</strong>
-        ${{ price|floatformat:2|intcomma}}</p>
-    {% endfor %}
-{% endblock %}
+                        <tr> <td>PCR:</td>
+                            <td>{{ object.price_cost_ratio|floatformat:-4|intcomma}}</td></tr>
+                    </table>
+            </div>
+        </main>
+        <footer>Property of Isaac Barrezueta ©</footer>
+    </body>
+</html>
