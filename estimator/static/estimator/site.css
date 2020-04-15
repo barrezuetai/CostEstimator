@@ -6,13 +6,18 @@ body {
 }
 
 nav {
+    position: fixed;
+    top: 0;
+    width: 100vw;
     display: flex;
     height: 60px;
     background-color: #364156;
     align-items: center;
+    box-shadow: 0px 5px rgba(6, 68, 68, 0.158);
 }
 
 .nav2 {
+    margin-top:60px;
     display: flex;
     height: 50px;
     background-color: #DFF8EB;

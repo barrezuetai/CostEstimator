@@ -1,7 +1,8 @@
 from django.test import TestCase
 from .utils.pdfparse import normalize as norm
 # from .utils.pdfparse import pdf_to_text as p2t
-from .utils.estimate import get_pcr, get_prices, find_average_price, generate_prices
+from .utils.estimate import get_pcr, get_prices
+from .utils.estimate import find_average_price, generate_prices
 
 
 class PDFScanTestCase(TestCase):
@@ -55,7 +56,7 @@ class EstimateTestCase(TestCase):
         prices = generate_prices(1)
         self.assertGreater(len(prices), 0)
 
-    
+
 class ModelTestCase(TestCase):
 
     def setup(self):
